@@ -1,0 +1,12 @@
+{
+  "domain": "hyperbackup",
+  "name": "Synology HyperBackup",
+  "version": "1.0.0",
+  "config_flow": true,
+  "documentation": "https://github.com/pierrec18/ha_hyperbackup",
+  "issue_tracker": "https://github.com/pierrec18/ha_hyperbackup/issues",
+  "dependencies": [],
+  "codeowners": ["@pierrec18"],
+  "iot_class": "local_polling",
+  "requirements": []
+}

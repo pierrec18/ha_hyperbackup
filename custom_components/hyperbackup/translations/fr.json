@@ -1,0 +1,38 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Synology Hyper Backup",
+        "description": "Connexion directe à votre NAS Synology.",
+        "data": {
+          "host": "Adresse IP ou hostname du NAS",
+          "port": "Port (5001 HTTPS / 5000 HTTP)",
+          "username": "Nom d'utilisateur DSM",
+          "password": "Mot de passe",
+          "ssl": "Utiliser HTTPS",
+          "verify_ssl": "Vérifier le certificat SSL"
+        }
+      },
+      "2sa": {
+        "title": "Authentification à deux facteurs",
+        "description": "Saisissez le code OTP pour {username}.",
+        "data": { "otp_code": "Code OTP" }
+      },
+      "reauth_confirm": {
+        "title": "Ré-authentification requise",
+        "description": "Le code OTP est à nouveau requis pour {username}.",
+        "data": { "otp_code": "Code OTP" }
+      }
+    },
+    "error": {
+      "invalid_auth": "Identifiants invalides.",
+      "cannot_connect": "Impossible de se connecter au NAS.",
+      "otp_failed": "Code OTP invalide ou expiré.",
+      "unknown": "Erreur inattendue. Consultez les journaux."
+    },
+    "abort": {
+      "already_configured": "HyperBackup est déjà configuré.",
+      "reauth_successful": "Ré-authentification réussie."
+    }
+  }
+}
