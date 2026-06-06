@@ -150,14 +150,17 @@ class SynologyDSMClient:
             "passwd": self._password,
             "session": "hyperbackup",
             "format": "sid",
-            "enable_device_token": "yes",
         }
 
-        # Reconnexion avec device_token (bypass OTP)
+        # Reconnexion avec device_token (bypass OTP pour comptes 2FA)
         if self._device_id and self._device_token:
             params["device_id"] = self._device_id
             params["device_token"] = self._device_token
+            params["enable_device_token"] = "yes"
             _LOGGER.debug("Login avec device_id + device_token")
+        elif otp_code:
+            # Validation OTP initiale : demander un device_token pour les reconnexions futures
+            params["enable_device_token"] = "yes"
 
         # Validation OTP
         if otp_code:
